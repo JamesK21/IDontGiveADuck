@@ -151,9 +151,7 @@ MonoBehaviour:
   lifetime: 5
   moveSpeed: 0
   destroyEffect: {fileID: 0}
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: bf62f82ab68120d4ab8e181987f8a3dc, type: 3}
   successParticles: {fileID: 0}
-  successSound: {fileID: 0}
   successTextPrefab: {fileID: 0}
   spriteRenderer: {fileID: 1339619373891858794}
-  lowLifetimeColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}

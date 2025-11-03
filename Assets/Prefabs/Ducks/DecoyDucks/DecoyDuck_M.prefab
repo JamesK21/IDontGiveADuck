@@ -151,11 +151,10 @@ MonoBehaviour:
   lifetime: 5
   moveSpeed: 0
   destroyEffect: {fileID: 0}
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: 35a398ffc1437ee4a9a9f78e8444dec3, type: 3}
   penaltyParticles: {fileID: 0}
   penaltySound: {fileID: 0}
   timePenalty: 3
   penaltyTextPrefab: {fileID: 0}
   spriteRenderer: {fileID: 251516885786172104}
-  decoyColor: {r: 1, g: 0, b: 0, a: 1}
   subtleVisualDifference: 1
