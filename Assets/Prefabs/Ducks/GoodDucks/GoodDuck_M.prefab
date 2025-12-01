@@ -153,7 +153,8 @@ MonoBehaviour:
   destroyEffect: {fileID: 0}
   clickSound: {fileID: 0}
   successParticles: {fileID: 0}
-  successSound: {fileID: 0}
   successTextPrefab: {fileID: 0}
   spriteRenderer: {fileID: 1339619373891858794}
-  lowLifetimeColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  scoreValue: 10
+  hitEffect: {fileID: 265695541272136409, guid: cb89cd60ac8a92c4788fd2278dc1ba3c, type: 3}
+  hitSound: {fileID: 8300000, guid: 01c37c1a788a71f4b926378e318db16a, type: 3}

@@ -277,16 +277,21 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void StartGame(bool fromMenu = false)
     {
+        
         if (currentLevel == null)
         {
-            Debug.LogError("Cannot start game - no level loaded!");
-            return;
+            LoadCurrentLevel();
+
+            if (currentLevel == null)
+            {
+                Debug.LogError("Cannot start game - no level loaded EVEN after trying to load one!");
+                return;
+            }
         }
 
         currentState = GameState.Playing;
 
         // Only trigger level load event if coming from menu
-        // (prevents duplicate audio/music changes when advancing levels)
         if (fromMenu)
         {
             OnLevelLoaded?.Invoke(currentLevel);
@@ -308,6 +313,7 @@ public class GameManager : MonoBehaviour
         // Notify other systems of state change
         OnGameStateChanged?.Invoke(currentState);
     }
+
 
     /// <summary>
     /// Ends the current level (win or lose)
