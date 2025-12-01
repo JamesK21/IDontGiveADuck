@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1339619373891858794}
   - component: {fileID: 5640780115888115071}
   - component: {fileID: 4603626279781314114}
+  - component: {fileID: -4125916912311778945}
   m_Layer: 0
   m_Name: GoodDuck_S
   m_TagString: GoodDuck
@@ -155,3 +156,26 @@ MonoBehaviour:
   successParticles: {fileID: 0}
   successTextPrefab: {fileID: 0}
   spriteRenderer: {fileID: 1339619373891858794}
+  destroyDelayAfterClick: 1.5
+--- !u!95 &-4125916912311778945
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115852952343671650}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 03ec760938346b74eb87f2753f6dc047, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
