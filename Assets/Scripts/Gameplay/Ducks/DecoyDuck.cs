@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;   // For TextMeshPro on the penalty text prefab
 
 /// <summary>
 /// Decoy duck that penalises players when clicked
@@ -10,86 +11,88 @@ public class DecoyDuck : BaseDuck
     [SerializeField] private AudioClip penaltySound;
     [SerializeField] private int timePenalty = 3; // seconds to subtract
     [SerializeField] private GameObject penaltyTextPrefab; // Optional floating text
-    
+
+    // Optional: let other scripts (like GameManager) read the penalty value
+    public int TimePenalty => timePenalty;
+
     [Header("Visual Distinction")]
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private bool subtleVisualDifference = true; // Make it harder to distinguish
-    
+
     #region Initialization Override
-    
+
     /// <summary>
     /// Initialise decoy duck with custom properties
     /// </summary>
     public override void Initialize(float customLifetime = -1, int customPointValue = -1)
     {
         base.Initialize(customLifetime, customPointValue);
-    
     }
-    
+
     #endregion
-    
+
     #region Abstract Implementation
-    
+
     protected override void OnClicked()
     {
-        
         // Notify game manager about penalty
         if (GameManager.Instance != null)
         {
+            // GameManager can use decoy.TimePenalty if it wants to subtract time
             GameManager.Instance.OnDecoyDuckClicked(this);
         }
-        
+
         // Play penalty feedback
         PlayPenaltyEffects();
-        
+
         // Destroy duck
         DestroyDuck();
     }
-    
+
     protected override void OnLifetimeExpired()
     {
         Debug.Log("Decoy duck expired naturally - no penalty");
-        
+
         // Notify game manager (no penalty for natural expiration)
         if (GameManager.Instance != null)
         {
             GameManager.Instance.OnDecoyDuckExpired(this);
         }
-        
+
         // No penalty effects for natural expiration
     }
-    
+
     #endregion
-    
+
     #region Virtual Overrides
-    
+
     protected override void OnDuckSpawned()
     {
         base.OnDuckSpawned();
-        
+
         // Decoy duck specific spawn behaviour
         // Could add subtle spawn differences
-        
+
         // Ensure proper tag for identification
         gameObject.tag = "DecoyDuck";
-        
+
         // Optional: Add subtle behavioural differences
         if (subtleVisualDifference)
         {
             AddSubtleBehavioralDifferences();
         }
     }
-    
+
     protected override void HandleMovement()
     {
         base.HandleMovement();
-        
+
         // NOTE: This movement code is currently not active!
         // The base BaseDuck class has moveSpeed = 0f by default
         // To see this movement in action, you would need to:
         // 1. Set moveSpeed > 0 in the Inspector, OR
         // 2. Override the moveSpeed property in this DecoyDuck class
-        
+
         // Decoy ducks could have slightly different movement patterns
         // This could help players learn to distinguish them from good ducks
         if (moveSpeed > 0)
@@ -101,11 +104,11 @@ public class DecoyDuck : BaseDuck
         }
         // If moveSpeed is 0 (default), this duck won't move at all
     }
-    
+
     #endregion
-    
+
     #region Decoy Duck Specific Methods
-    
+
     /// <summary>
     /// Play penalty effects when clicked
     /// </summary>
@@ -116,25 +119,24 @@ public class DecoyDuck : BaseDuck
         {
             AudioManager.Instance.PlayDuckClickDecoy(transform.position);
         }
-        
+
         // Particle effect (different from good duck)
-        if (penaltyParticles != null)
-        {
-            ParticleSystem effect = Instantiate(penaltyParticles, transform.position, transform.rotation);
-            effect.Play();
-            Destroy(effect.gameObject, effect.main.duration);
-        }
-        
         // Floating penalty text (optional)
         if (penaltyTextPrefab != null)
         {
             GameObject penaltyText = Instantiate(penaltyTextPrefab, transform.position, Quaternion.identity);
             // Assume the prefab has a script to handle floating animation
+
+            // If it uses TextMeshPro, show the actual time penalty like "-3s"
+            var tmp = penaltyText.GetComponentInChildren<TextMeshProUGUI>();
+            if (tmp != null)
+            {
+                tmp.text = $"-{timePenalty}s";
+            }
         }
-        
-        
+
     }
-    
+
     /// <summary>
     /// Add subtle differences to make decoys learnable but not obvious
     /// </summary>
@@ -143,14 +145,14 @@ public class DecoyDuck : BaseDuck
         // Example: Decoy ducks spawn slightly closer to edges
         // Or have slightly different timing patterns
         // This gives observant players a chance to learn the differences
-        
+
         // Slight scale difference (barely noticeable)
         float scaleVariation = Random.Range(0.95f, 1.05f);
         transform.localScale *= scaleVariation;
-        
+
         // Slight rotation variation
         transform.rotation *= Quaternion.Euler(0, 0, Random.Range(-2f, 2f));
     }
-    
+
     #endregion
 }

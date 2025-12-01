@@ -11,8 +11,16 @@ public class GoodDuck : BaseDuck
     
     [Header("Visual Feedback")]
     [SerializeField] private SpriteRenderer spriteRenderer;
-   
-    
+    [Header("Score")] public int scoreValue = 10; // this is the score for when clicking ducks
+
+    [Header("VFX")] public ParticleSystem hitEffect;  // refrence to particles for when clickung ducks
+
+    [Header("SFX")] public AudioClip hitSound; // sound when clicking dcuk 
+
+    private AudioSource audioSource;
+    private Vector3 originalScale;
+    private bool isHit = false;
+
     protected override void Start()
     {
         base.Start();
@@ -102,7 +110,67 @@ public class GoodDuck : BaseDuck
             // Assume the prefab has a script to handle floating animation
         }
     }
-    
+
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        originalScale = transform.localScale; // <----
+    }
+
+    void OnMouseDown()
+    {
+        if (isHit) return;   // avoid double-click spam
+        isHit = true;
+
+        // 1. Animation
+        StartCoroutine(ClickAnimation());
+
+        // 2. Particles
+        if (hitEffect != null)
+        {
+            Instantiate(hitEffect, transform.position, Quaternion.identity);
+        }
+
+        // sound 
+        if (audioSource != null && hitSound != null)
+        {
+            audioSource.pitch = Random.Range(0.9f, 1.1f);
+            audioSource.PlayOneShot(hitSound);
+        }
+        // Score for Score text that appears
+        GameManager.Instance.AddScore(scoreValue, transform.position);
+
+        
+        Destroy(gameObject, 0.2f);// destroy duck after period of time when clicked
+
+    }
+
+
+    private System.Collections.IEnumerator ClickAnimation()
+    {
+        Vector3 big = originalScale * 1.2f;
+        float duration = 0.1f;
+        float t = 0f;
+
+        // Scale change
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            float lerp = t / duration;
+            transform.localScale = Vector3.Lerp(originalScale, big, lerp);
+            yield return null;
+        }
+
+        // Scale back to normal
+        t = 0f;
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            float lerp = t / duration;
+            transform.localScale = Vector3.Lerp(big, originalScale, lerp);
+            yield return null;
+        }
+    }
     #endregion
 
 }
