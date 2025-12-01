@@ -610,7 +610,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.06127429, y: -1.464236}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -620,7 +620,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 14, y: 6}
+  m_Size: {x: 11.450983, y: 5.4486136}
   m_EdgeRadius: 0
 --- !u!4 &88627197
 Transform:
@@ -2714,8 +2714,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 2130786555258662086, guid: 85c0ddae0b1891b479156a3dbb9d4806, type: 3}
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: 35ab2cdeb427cce48a02ca76adbf86c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2735,8 +2735,8 @@ Transform:
   m_GameObject: {fileID: 1253182320}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.2235, y: 0.1609, z: 0}
+  m_LocalScale: {x: 1.1887916, y: 1.0235, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3040,9 +3040,9 @@ MonoBehaviour:
   levelCompleteSound: {fileID: 0}
   gameOverSound: {fileID: 0}
   duckClickDecoySound: {fileID: 8300000, guid: e1acdd1bc4d1e8f4a871efbe1ea6e9ab, type: 3}
-  duckClickGoodSound: {fileID: 8300000, guid: 92648bc8bb61f2142ad3ae9708c86a30, type: 3}
+  duckClickGoodSound: {fileID: 8300000, guid: 426fe00d80100c2428c54bf9a4cb90f6, type: 3}
   masterVolume: 1
-  musicVolume: 0.5
+  musicVolume: 0.291
   sfxVolume: 1
 --- !u!4 &1539604450
 Transform:
@@ -3656,7 +3656,7 @@ MonoBehaviour:
   - {fileID: 2979584664770396576, guid: 0b4e3570a8f1b254187947b603afcf94, type: 3}
   - {fileID: 2979584664770396576, guid: 5faca6bce2f73cd49b211b428860d857, type: 3}
   - {fileID: 2979584664770396576, guid: dc9deb93d1aaeb34ebf220579d1bbd4d, type: 3}
-  spawnArea: {fileID: 0}
+  spawnArea: {fileID: 88627196}
   spawnPadding: 1
   showSpawnArea: 1
   spawnAreaColor: {r: 0, g: 1, b: 0, a: 1}
@@ -3675,6 +3675,79 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &6095198364972910095
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 608087772884325220, guid: 75cce4d86832fff4a9bf1811d3af8f5a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.81266
+      objectReference: {fileID: 0}
+    - target: {fileID: 608087772884325220, guid: 75cce4d86832fff4a9bf1811d3af8f5a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.52055
+      objectReference: {fileID: 0}
+    - target: {fileID: 608087772884325220, guid: 75cce4d86832fff4a9bf1811d3af8f5a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 608087772884325220, guid: 75cce4d86832fff4a9bf1811d3af8f5a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 608087772884325220, guid: 75cce4d86832fff4a9bf1811d3af8f5a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 608087772884325220, guid: 75cce4d86832fff4a9bf1811d3af8f5a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 608087772884325220, guid: 75cce4d86832fff4a9bf1811d3af8f5a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 608087772884325220, guid: 75cce4d86832fff4a9bf1811d3af8f5a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 608087772884325220, guid: 75cce4d86832fff4a9bf1811d3af8f5a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 608087772884325220, guid: 75cce4d86832fff4a9bf1811d3af8f5a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8375125984753904066, guid: 75cce4d86832fff4a9bf1811d3af8f5a, type: 3}
+      propertyPath: autoRandomSeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8375125984753904066, guid: 75cce4d86832fff4a9bf1811d3af8f5a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.9056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 8375125984753904066, guid: 75cce4d86832fff4a9bf1811d3af8f5a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.75386256
+      objectReference: {fileID: 0}
+    - target: {fileID: 8375125984753904066, guid: 75cce4d86832fff4a9bf1811d3af8f5a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.5553578
+      objectReference: {fileID: 0}
+    - target: {fileID: 8845105786405633381, guid: 75cce4d86832fff4a9bf1811d3af8f5a, type: 3}
+      propertyPath: m_Name
+      value: DuckClick
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 75cce4d86832fff4a9bf1811d3af8f5a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3689,3 +3762,4 @@ SceneRoots:
   - {fileID: 55474495}
   - {fileID: 1764937601}
   - {fileID: 1539604450}
+  - {fileID: 6095198364972910095}

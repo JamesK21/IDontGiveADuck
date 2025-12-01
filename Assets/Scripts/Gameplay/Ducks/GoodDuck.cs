@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+
 
 /// <summary>
 /// Good duck that players should click for points
@@ -11,8 +13,11 @@ public class GoodDuck : BaseDuck
     
     [Header("Visual Feedback")]
     [SerializeField] private SpriteRenderer spriteRenderer;
-   
-    
+
+    [Header("Post Click Settings")]
+    [SerializeField] private float destroyDelayAfterClick = 1.5f; // seconds
+
+
     protected override void Start()
     {
         base.Start();
@@ -21,23 +26,25 @@ public class GoodDuck : BaseDuck
     
     #region Abstract Implementation
     
+    
     protected override void OnClicked()
     {
         Debug.Log($"Good duck clicked! Awarded {pointValue} points");
-        
+
         // Notify game manager
         if (GameManager.Instance != null)
         {
             GameManager.Instance.OnGoodDuckClicked(this);
         }
-        
+
         // Play success feedback
         PlaySuccessEffects();
-        
-        // Destroy duck
-        DestroyDuck();
+
+        // Instead of destroying immediately, wait a bit
+        StartCoroutine(DestroyAfterDelay());
     }
-    
+
+
     protected override void OnLifetimeExpired()
     {
         Debug.Log("Good duck expired - player missed it!");
@@ -102,7 +109,15 @@ public class GoodDuck : BaseDuck
             // Assume the prefab has a script to handle floating animation
         }
     }
-    
+
+    private IEnumerator DestroyAfterDelay()
+    {
+        // Optional: you could stop lifetime ticking here if you ever change BaseDuck logic
+        yield return new WaitForSeconds(destroyDelayAfterClick);
+        DestroyDuck();
+    }
+
+
     #endregion
 
 }
