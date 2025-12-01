@@ -423,8 +423,6 @@ MonoBehaviour:
   showDebugInfo: 1
   timerWarningColor: {r: 1, g: 0, b: 0, a: 1}
   timerWarningThreshold: 10
-  floatingScorePrefab: {fileID: 0}
-  mainCanvas: {fileID: 0}
 --- !u!1 &80962716
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,73 +637,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -1, z: 0}
---- !u!1 &130973032
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 130973034}
-  - component: {fileID: 130973033}
-  m_Layer: 0
-  m_Name: UIManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &130973033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130973032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb3ba25ce841d5847882083e340aa026, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
-  timerText: {fileID: 0}
-  livesText: {fileID: 0}
-  levelText: {fileID: 0}
-  progressText: {fileID: 0}
-  gameOverPanel: {fileID: 0}
-  gameOverTitle: {fileID: 0}
-  finalScoreText: {fileID: 0}
-  restartButton: {fileID: 0}
-  nextLevelButton: {fileID: 0}
-  pausePanel: {fileID: 0}
-  resumeButton: {fileID: 0}
-  pauseRestartButton: {fileID: 0}
-  instructionsPanel: {fileID: 0}
-  startGameButton: {fileID: 0}
-  testLevel12Button: {fileID: 0}
-  showTestButton: 1
-  testButtonLevel: 12
-  showDebugInfo: 1
-  timerWarningColor: {r: 1, g: 0, b: 0, a: 1}
-  timerWarningThreshold: 10
-  floatingScorePrefab: {fileID: 7977886729522911418, guid: d61d6a4b3dbb93e48af11eb708bfe859, type: 3}
-  mainCanvas: {fileID: 55474494}
---- !u!4 &130973034
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130973032}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.15008, y: -1.62918, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &299827548
 GameObject:
   m_ObjectHideFlags: 0
@@ -2783,7 +2714,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 2130786555258662086, guid: 85c0ddae0b1891b479156a3dbb9d4806, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3758,4 +3689,3 @@ SceneRoots:
   - {fileID: 55474495}
   - {fileID: 1764937601}
   - {fileID: 1539604450}
-  - {fileID: 130973034}
