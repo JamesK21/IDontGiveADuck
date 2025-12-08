@@ -13,7 +13,7 @@ public abstract class BaseDuck : MonoBehaviour
     [SerializeField] protected AudioClip clickSound;
 
     [Header("Animation Timing")]
-    [SerializeField] protected float destroyAnimationDelay = 0.3f; // how long the destroy anim lasts
+    [SerializeField] protected float destroyAnimationDelay = 0.3f; 
 
     protected float currentLifetime;
     protected bool isClicked = false;
@@ -92,7 +92,7 @@ public abstract class BaseDuck : MonoBehaviour
         Collider2D col = GetComponent<Collider2D>();
         if (col != null) col.enabled = false;
 
-        OnClicked(); // child handles score, sounds, etc., then calls DestroyDuck()
+        OnClicked(); 
     }
 
     #endregion
@@ -149,7 +149,7 @@ public abstract class BaseDuck : MonoBehaviour
             AudioSource.PlayClipAtPoint(clickSound, transform.position);
         }
 
-        // wait a bit so the destroy anim can play
+        // this waits a bit so the destroy anim can play
         float delay = animator != null ? destroyAnimationDelay : 0f;
         Destroy(gameObject, delay);
     }
@@ -158,10 +158,10 @@ public abstract class BaseDuck : MonoBehaviour
 
     #region Abstract / Virtual Methods
 
-    // now just a hook for children; no default animation here
+    
     protected virtual void OnClicked()
     {
-        // children (GoodDuck/DecoyDuck) do their own logic and then call DestroyDuck()
+        
     }
 
     protected abstract void OnLifetimeExpired();

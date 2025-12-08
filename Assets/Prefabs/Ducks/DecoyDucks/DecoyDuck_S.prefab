@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e4061a3cfa2bf3a4f8a94bb0a83fa707, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 10f0033a8ad67b744aae384948949734, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,7 +127,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3.1, y: 2.84}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -151,11 +151,10 @@ MonoBehaviour:
   lifetime: 5
   moveSpeed: 0
   destroyEffect: {fileID: 0}
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: 3a2c5b303c7e5694097d32bef82e7bab, type: 3}
+  destroyAnimationDelay: 0.3
   penaltyParticles: {fileID: 0}
   penaltySound: {fileID: 0}
-  timePenalty: 5
   penaltyTextPrefab: {fileID: 0}
   spriteRenderer: {fileID: 251516885786172104}
-  decoyColor: {r: 1, g: 0, b: 0, a: 1}
   subtleVisualDifference: 1

@@ -152,7 +152,7 @@ MonoBehaviour:
   lifetime: 5
   moveSpeed: 0
   destroyEffect: {fileID: 0}
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: 3bccfe4f7472b87408652f8f9a426245, type: 3}
   destroyAnimationDelay: 1.8
   successParticles: {fileID: 0}
   successTextPrefab: {fileID: 0}
